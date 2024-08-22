@@ -5,6 +5,6 @@ export const userRouter = Router()
 
 userRouter.post('/register', register);
 
-userRouter.post('/login', login)
+userRouter.post('/login', login);
 
-userRouter.get('/user', getAllUser)
+userRouter.get('/user', getAllUser);
