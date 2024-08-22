@@ -45,7 +45,7 @@ export const login = async (req,res) => {
 
         const connection = await newConnection();
 
-        const sql = `SELECT * FROM users WHERE username =? LIMIT 1`;
+        const sql = `SELECT * FROM users WHERE username =?`;
 
         const [searchUser] = await connection.query(sql, username);
 
