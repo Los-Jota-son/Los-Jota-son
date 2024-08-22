@@ -64,7 +64,7 @@ export const Login = () => {
           <Form.Control
             type="text"
             placeholder="example123"
-            name="usuario"
+            name="username"
             onChange={handleChange}
           />
         </FloatingLabel>
@@ -77,7 +77,7 @@ export const Login = () => {
           <Form.Control
             type="password"
             placeholder="name12312"
-            name="contrasenia"
+            name="password"
             onChange={handleChange}
           />
         </FloatingLabel>

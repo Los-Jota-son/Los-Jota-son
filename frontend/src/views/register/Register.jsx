@@ -45,7 +45,7 @@ export const Register = () => {
           <Form.Control
             type="text"
             placeholder="john"
-            name="nombre"
+            name="name"
             onChange={handleChange}
           />
         </FloatingLabel>
@@ -54,7 +54,7 @@ export const Register = () => {
           <Form.Control
             type="text"
             placeholder="Doe"
-            name="apellido"
+            name="lastname"
             onChange={handleChange}
           />
         </FloatingLabel>
@@ -67,7 +67,7 @@ export const Register = () => {
           <Form.Control
             type="text"
             placeholder="example123"
-            name="usuario"
+            name="username"
             onChange={handleChange}
           />
         </FloatingLabel>
@@ -76,7 +76,7 @@ export const Register = () => {
           <Form.Control
             type="email"
             placeholder="name@example.com"
-            name="correo"
+            name="email"
             onChange={handleChange}
           />
         </FloatingLabel>
@@ -89,7 +89,7 @@ export const Register = () => {
           <Form.Control
             type="password"
             placeholder="name12312"
-            name="contrasenia"
+            name="password"
             onChange={handleChange}
           />
         </FloatingLabel>
