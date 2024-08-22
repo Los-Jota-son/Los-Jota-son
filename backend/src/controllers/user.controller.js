@@ -20,6 +20,7 @@ export const getAllUser = async (req,res) => {
 
 export const register = async (req,res) => {
     try {
+
         const { name, lastname, username, email, password } = req.body;
 
         const connection = await newConnection();
@@ -70,18 +71,20 @@ export const login = async (req,res) => {
         }
 
         connection.end()
-    } catch (error) {
-        console.error(error)
-        return res.status(500).json({msg: 'Error interno del servidor', error})
-        
-    }
-
+   
     const token = await generarJWT({ id: searchUser[0].id })
 
     return res.json({
         msg: 'inicio de sesión exitoso',
         token,
     })
+
+} catch (error) {
+    console.error(error)
+    return res.status(500).json({msg: 'Error interno del servidor', error})
+    
+}
+
 };
 
 export const uptadeUser = async (req,res) => {
