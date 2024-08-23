@@ -26,7 +26,7 @@ export const getPostById = async (req,res) => {
         const [result] = await connection.query(`SELECT * FROM post WHERE id = ?`, [id]);
 
         if(result.length === 0) {
-            res.status(404).json({ msg: 'publicación no encontrado' })
+            res.status(404).json({ msg: 'publicación no encontrada' })
         }
 
         res.status(200).json(result[0])
@@ -43,19 +43,20 @@ export const getPostById = async (req,res) => {
 export const createPost = async (req,res) => {
 
     try {
-        const { imagen,description } = req.body;
+        const { imagen,video,description } = req.body;
 
         const id_usuario = req.user.id;
 
         const connection = await newConnection()
 
         const [result] = await connection.query(`INSERT INTO post
-        (imagen,description,id_usuario)
-        VALUES (?,?,?)`, [imagen, description, id_usuario]);
+        (imagen,video,description,id_usuario)
+        VALUES (?,?,?)`, [imagen, description,video, id_usuario]);
 
         res.status(201).json({
             id: result.insertId,
             imagen,
+            video,
             description,
             id_usuario
     })
@@ -73,7 +74,7 @@ export const updatePost = async (req,res) => {
     try {
         const id = parseInt(req.params.id)
 
-        const { imagen, description } = req.body
+        const { imagen,video, description } = req.body
 
         const connection = await newConnection()
 
@@ -84,12 +85,13 @@ export const updatePost = async (req,res) => {
         };
 
         await connection.query(`
-            UPDATE post SET imagen = ?, description = ? WHERE id = ?`, [imagen, description, id]
+            UPDATE post SET imagen = ?, video = ?, description = ? WHERE id = ?`, [imagen,video, description, id]
     );
 
         res.status(201).json({
             id: id,
             imagen,
+            video,
             description
     });
 
