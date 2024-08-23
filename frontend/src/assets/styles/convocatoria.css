@@ -1,0 +1,374 @@
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "north";
+    src: url(/assets/fonts/north-free-sans-serif-typeface.zip);
+    font-weight: bold;
+    font-style: bold;
+}
+
+.tituloPrincipal{
+color: #d18800;
+font-weight: bold;
+padding-top: 25px;
+}
+
+.subtituloPrincipal{
+    color: white;
+}
+
+#convocatorias-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 50px;
+}
+
+.contenidoCarta{
+    display: grid;
+    grid-template-columns: (3, 1fr);
+    grid-template-rows: (5, 1fr);
+    width: 335px;
+    height: 570px;
+    padding: 20px;
+    background-color: #f0ad65;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0px 25px 10px rgba(0,0,0,0.2);
+    padding-bottom: 0;
+    margin-bottom: 70px;
+}
+
+
+.tituloConvocatoria{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #001b4e;
+}
+
+.parrafoConvocatoria{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1b1a1a;
+}
+
+.linkConvocatoria{
+    display: flex;
+    border: 1px solid rgb(68, 67, 67);
+    height: 40px;
+    max-width: 150px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(68, 32, 8);
+    position: relative;
+    left: 90px;
+    bottom: 67px;
+    box-shadow: 0px 25px 10px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.linkConvocatoria:hover{
+    background-color: rgb(40, 40, 40);
+}
+
+.imagenConvocatoria{
+    height: 200px;
+    width: 100%;
+}
+
+
+
+.opcionesNav{
+    padding-left: 0;
+    
+}
+
+.titulo{
+    font-size: 27px;
+    font-family: "north";
+    color: white;
+    font-weight: bold;
+}
+
+.iconI span{
+    color: white;
+}
+
+.iconI span:hover{
+    color: black;
+}
+
+.titulo:hover{
+    color: #b8b8b8;
+    font-size: 31px;
+    transition: 0.5s;
+}
+
+.iconoPag{
+    height: 45px;
+    margin-top: 6px;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:"aside1 mein"
+    "pie pie";
+}
+
+.header{
+    display: none;
+}
+
+.mein{
+    grid-area: mein;
+    height: auto;
+    background-color: #343A40;
+}
+
+
+.asideIzq{
+    grid-area: aside1;
+    height: 100%;
+    background-color: #343A40;
+    border-right: solid 1px gray;
+    position: sticky;
+}
+
+.pie{
+    display: flex;
+    justify-content: center;
+    grid-area: pie;
+    background-color: #222222;
+    z-index: 1;
+}
+
+.redesSociales{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+.esteHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconI button{
+    display: flex;
+    justify-content: center;
+    font-family: "north";
+    font-size: 20px;
+}
+
+.iconI{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.iconosNavizq{
+    margin-right: 10px;
+    color: #FAA307;
+}
+
+.soport button{
+    background-color: #343A40 ;
+    font-family: "north";
+}
+
+.motivacion{
+    padding: 5px;
+}
+
+.logoPag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.logoIzq{
+    width: 40px;
+}
+
+.titulo{
+    margin-left: 0;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+/* Aquí se intentará hacer un cambio del background con un boton*/
+
+.fa-solid.fa-sun{
+    color: rgb(250, 246, 2);
+}
+
+.contenedorNav button{
+    background-color: #000000;
+    height: 30px;
+    width: 33px;
+}
+.setLight{
+    display: flex;
+    color: rgb(243, 243, 243);
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-top: 25px;
+    padding: 5px;
+    border-radius: 16px;
+}
+
+.menu .setLight{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.setLight:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(59, 59, 59);
+    border-color: black;
+}
+
+.iconIzq{
+    color: rgb(0, 0, 0);
+}
+
+/* CODIGO DE LA HAMBURGUESA */
+
+.hamburger-icon {
+    display: none; 
+    width: 35px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.hamburger-icon div {
+    width: 100%;
+    height: 4px;
+    background-color: #f5f1f1;
+    border-radius: 2px;
+}
+
+.menu {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+@media(max-width: 700px) {
+    body{
+        display: grid;
+        grid-template-areas: "header header header"
+        "mein mein mein"
+        "pie pie pie";
+    }
+
+    .header{
+        display: inline;
+        grid-area: header;
+        background-color: #343A40;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        opacity: 0.95;
+    }
+
+    .tituloPrincipal{
+        padding-top: 20%;
+    }
+
+    .asideIzq{
+        display: none;
+    }
+
+    .mein{
+        grid-area: mein;
+        height: auto;
+    }
+
+    #convocatorias-container div article{
+        max-width: 300px;
+        height: auto;
+    }
+
+
+    .pie{
+        display: flex;
+        grid-area: pie;
+        background-color: black;
+    }
+
+    .logoPag{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 0;
+        width: 87%;
+    }
+    /* Hamburguesa */
+    .hamburger-icon {
+        display: flex;
+    }
+    
+    .hamburger-icon div {
+        width: 100%;
+        height: 4px;
+        background-color: #e0a969;
+        border-radius: 2px;
+    }
+    
+    
+    .menu-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .titulo{
+        font-size: 25px;
+    }
+}
+
