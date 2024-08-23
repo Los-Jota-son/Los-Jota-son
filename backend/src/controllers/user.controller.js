@@ -1,6 +1,4 @@
 import { newConnection } from "../database/db.js";
-import {hashSync, compareSync} from 'bcrypt';
-import { generarJWT } from "../helpers/generarJWT.js";
 
 export const getAllUser = async (req,res) => {
     try {
@@ -18,84 +16,42 @@ export const getAllUser = async (req,res) => {
     }
 }
 
-export const register = async (req,res) => {
+export const getUserById = async (req,res) => {
     try {
-
-        const { name, lastname, username, email, password } = req.body;
+        const id = parseInt(req.params.id)
 
         const connection = await newConnection();
 
-        const sql = `INSERT INTO users (name, lastname, username, email, password) VALUES (?,?,?,?,?)`;
+        const sql = `SELECT * FROM users WHERE id = ?`;
 
-            const hashPassword = hashSync(password, 10)
+        const [searchUser] = await connection.query(sql, id);
 
-            await connection.query(sql, 
-                [name, 
-                lastname, 
-                username,
-                email, 
-                hashPassword])
+        if(!searchUser[0]) {
+            return res.status(400).json({
+                msg: 'El usuario no existe'
+            })
+        } else {
+            res.status(200).json(searchUser[0])
+        }
 
-            res.status(201).json({msg: 'Registrado correctamente'})
 
-            connection.end()
     } catch (error) {
         console.error(error)
         return res.status(500).json({msg: 'Error interno del servidor', error})
     }
-    
 }
-
-export const login = async (req,res) => {
-    try {
-        const { username, password } = req.body;
-
-        const connection = await newConnection();
-
-        const sql = `SELECT * FROM users WHERE username =?`;
-
-        const [searchUser] = await connection.query(sql, username);
-
-        if(!searchUser[0]) {
-            return res.status(400).json({
-                msg: 'El usuario no existe'
-            })
-        }
-
-        const valPassword = compareSync(password, searchUser[0].password)
-
-        if(!valPassword) {
-            return res.status(401).json({
-                msg: 'El usuario o contraseña no coinciden'
-            })
-        }
-
-        connection.end()
-   
-    const token = await generarJWT({ id: searchUser[0].id })
-
-    return res.json({
-        msg: 'inicio de sesión exitoso',
-        token,
-    })
-
-} catch (error) {
-    console.error(error)
-    return res.status(500).json({msg: 'Error interno del servidor', error})
-    
-}
-
-};
 
 export const uptadeUser = async (req,res) => {
     try {
-        const { username, password } = req.body
+
+        const id = parseInt(req.params.id)
+        const { name, lastname, username, email, password  } = req.body
 
         const connection = await newConnection();
 
-        const sql = `SELECT * FROM users WHERE username = ?`;
+        const sql = `SELECT * FROM users WHERE id = ?`;
 
-        const [searchUser] = await connection.query(sql, username);
+        const [searchUser] = await connection.query(sql, id);
 
         if(!searchUser[0]) {
             return res.status(400).json({
@@ -103,8 +59,45 @@ export const uptadeUser = async (req,res) => {
             })
         }
 
+        await connection.query(`UPDATE users SET name = ?, lastname = ?, username = ?, email = ?, password = ? WHERE id = ?`, [name, lastname, username, email, password, id])
+
+        res.status(201).json({
+            id: id,
+            name,
+            lastname,
+            username,
+            email,
+            password
+        })
+
 
     } catch (error) {
-        
+        console.error(error)
+        return res.status(500).json({msg: 'Error interno del servidor', error})
+    }
+}
+
+export const deleteUser = async (req,res) => {
+    try {
+        const id = parseInt(req.params.id);
+
+        const connection = await newConnection();
+
+        const [result] = await connection.query('SELECT * FROM users WHERE id = ?', [id]);
+    
+        if (result.length === 0) {
+            return res.status(404).json( { msg: 'usuario no encontrado' });
+        };
+
+        await connection.query(`
+            DELETE FROM users WHERE id = ?`, [id]
+        );
+
+        res.status(200).json({ msg: 'usuario eliminado' })
+
+        connection.end();
+    } catch (error) {
+        console.error();
+        return res.status(500).json({ msg: 'Error interno del servidor', error })
     }
 }
