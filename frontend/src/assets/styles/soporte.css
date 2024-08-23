@@ -1,4 +1,3 @@
-
 *{
     margin: 0%;
     padding: 0%;
@@ -12,93 +11,14 @@
     font-style: bold;
 }
 
-.tituloPrincipal{
-color: #d18800;
-font-weight: bold;
-padding-top: 25px;
-}
-
-.subtituloPrincipal{
-    color: white;
-}
-
-#convocatorias-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 50px;
-}
-
-.contenidoCarta{
-    display: grid;
-    grid-template-columns: (3, 1fr);
-    grid-template-rows: (5, 1fr);
-    width: 335px;
-    height: 570px;
-    padding: 20px;
-    background-color: #dab48e;
-    border-radius: 5px;
-    border: 1px solid black;
-    box-shadow: 0px 25px 10px rgba(0,0,0,0.2);
-    padding-bottom: 0;
-    margin-bottom: 70px;
-}
-
-
-.tituloConvocatoria{
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #001b4e;
-}
-
-.parrafoConvocatoria{
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1b1a1a;
-}
-
-.linkConvocatoria{
-    display: flex;
-    border: 1px solid rgb(68, 67, 67);
-    height: 40px;
-    max-width: 150px;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    color: white;
-    background-color: rgb(68, 32, 8);
-    position: relative;
-    left: 90px;
-    bottom: 67px;
-    box-shadow: 0px 25px 10px rgba(0,0,0,0.2);
-    font-weight: bold;
-}
-
-.linkConvocatoria:hover{
-    background-color: rgb(40, 40, 40);
-}
-
-.imagenConvocatoria{
-    height: 200px;
-    width: 100%;
-}
-
-
-
 .opcionesNav{
     padding-left: 0;
-    
 }
 
 .titulo{
     font-size: 27px;
     font-family: "north";
     color: white;
-    font-weight: bold;
 }
 
 .iconI span{
@@ -122,7 +42,7 @@ padding-top: 25px;
 
 body{
     display: grid;
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 250px 1fr;
     grid-template-rows: auto;
     grid-template-areas:"aside1 mein"
     "pie pie";
@@ -132,11 +52,77 @@ body{
     display: none;
 }
 
+
 .mein{
     grid-area: mein;
-    height: auto;
+    height: 100vs;
     background-color: #343A40;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
+
+.seccionComentarios{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkbox{
+    width: 45px;
+    height: 15px;
+}
+
+.botonSubmit{
+    margin-left: 10px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 70%;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.textoSoporte{
+    height: 150px;
+    padding: 3px;
+}
+
+.selectSoporte{
+    height: 35px;
+}
+
+.asuntoSoporte{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#formularioSoporte{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 25px;
+    padding: 25px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+
+}
+
+.imagenFormulario{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    background-image: url(./caffe.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 
 
 .asideIzq{
@@ -144,7 +130,6 @@ body{
     height: 100%;
     background-color: #343A40;
     border-right: solid 1px gray;
-    position: sticky;
 }
 
 .pie{
@@ -152,7 +137,6 @@ body{
     justify-content: center;
     grid-area: pie;
     background-color: #222222;
-    z-index: 1;
 }
 
 .redesSociales{
@@ -186,6 +170,7 @@ body{
 .iconosNavizq{
     margin-right: 10px;
     color: #FAA307;
+    margin-top: 35px;
 }
 
 .soport button{
@@ -300,7 +285,7 @@ body{
 }
 
 
-@media(max-width: 700px) {
+@media(max-width: 780px) {
     body{
         display: grid;
         grid-template-areas: "header header header"
@@ -311,15 +296,7 @@ body{
     .header{
         display: inline;
         grid-area: header;
-        background-color: #343A40;
-        position: fixed;
-        width: 100%;
-        z-index: 1;
-        opacity: 0.95;
-    }
-
-    .tituloPrincipal{
-        padding-top: 20%;
+        background-color: #d8d8d8;
     }
 
     .asideIzq{
@@ -328,12 +305,7 @@ body{
 
     .mein{
         grid-area: mein;
-        height: auto;
-    }
-
-    #convocatorias-container div article{
-        max-width: 300px;
-        height: auto;
+        height: 100vh;
     }
 
 
@@ -348,11 +320,18 @@ body{
         justify-content: flex-start;
         align-items: center;
         padding-bottom: 0;
-        width: 87%;
+        width: 85%;
     }
     /* Hamburguesa */
     .hamburger-icon {
-        display: flex;
+        display: none;
+        width: 35px;
+        height: 30px;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+        margin: 10px;
     }
     
     .hamburger-icon div {
@@ -362,13 +341,34 @@ body{
         border-radius: 2px;
     }
     
+    .menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .menu-item {
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .menu-item:last-child {
+        border-bottom: none;
+    }
     
     .menu-item:hover {
         background-color: #f0f0f0;
     }
 
     .titulo{
-        font-size: 25px;
+        font-size: 15px;
     }
 }
-
