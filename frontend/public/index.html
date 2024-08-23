@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotLight</title>
+    <link rel="icon" href="../assets/img/imagenes-Marcelo/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="contenedorNav container-fluid">
+                <div class="container-fluid" style="display: flex;">
+                    <article class="logoPag">
+                        <img class="iconoPag" src="../assets/img/imagenes-Marcelo/icono.png" alt="iconoPrincipal"><span
+                            class="titulo">SpotLight</span>
+                    </article>
+
+                    <div class="navLinks container" style="display: flex; align-items: end;">
+                        <a href="#" class="text-center"><i class="fa-regular fa-compass"></i><span
+                                style="margin-left: 2px;">Descubrir</span></a>
+
+                        <a href="#" class="text-center"><i class="fa-solid fa-user-group"></i><span
+                                style="margin-left: 2px;">Comunidad</span></a>
+
+                        <a href="#" class="text-center"><i class="fa-solid fa-scale-balanced"></i><span
+                                style="margin-left: 2px;">Reglas</span></a>
+
+                        <a href="soporte.html" class="text-center"><i class="fa-solid fa-headset"></i><span
+                                style="margin-left: 2px;">Soporte</span></a>
+
+                    </div>
+                    <button href="#" type="button" class="setLight" id="modeColor"><i
+                            class="moon fas fa-moon text-light"></i></button>
+                </div>
+                <div class="hamburger-icon" id="hamburgerIcon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="menu" id="menu">
+                    <a href="index.html" class="menu-item"
+                        style="color: rgb(60, 59, 58); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fas fa-home home-icon" style="margin-right: 10px;"></i><span>Home</span></a>
+                    <a href="perfil.html" class="menu-item"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-solid fa-user" style="margin-right: 10px;"></i><span>Perfil</span></a>
+
+                    <a href="#mensaje" class="menu-item"
+                        style="color: rgb(77, 75, 72); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-regular fa-message"
+                            style="margin-right: 10px;"></i><span>Soporte</span></a>
+
+                    <a href="soporte.html" class="menu-item"
+                        style="color: rgb(77, 75, 72); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-solid fa-headset" style="margin-right: 10px;"></i><span>Soporte
+                            Técnico</span></a>
+
+                    <a class="menu-item" href="#"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-regular fa-compass"
+                            style="margin-right: 10px;"></i><span>Descubre</span></a>
+
+                    <a class="menu-item" href="convocatoria.html"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-solid fa-newspaper"
+                            style="margin-right: 10px;"></i><span>Noticias</span></a>
+
+                    <a class="menu-item" href="#"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="iconIzq fa-solid fa-user-group"
+                            style="margin-right: 10px;"></i><span>Comunidades</span></a>
+
+                    <a class="menu-item" href="#"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><i
+                            class="fa-solid fa-scale-balanced" style="margin-right: 10px;"></i><span>Reglas</span></a>
+
+                    <a class="btn btn-warning menu-item pt-2" type="button" href="#"
+                        style="color: rgb(67, 67, 67); font-family: 'Courier New', Courier, monospace; font-size: 20px;"><span>Cerrar
+                            Sesión</span></a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <aside class="asideIzq">
+        <ul class="opcionesNav pb-5">
+            <div class="opcionesIzq">
+                <div class="esteHome container-fluid nav-item dropdown">
+                    <div class="iconI pt-4">
+                        <i class="iconosNavizq fa fa-home"></i> <a href="index.html" style="text-decoration: none;"><button type="button"
+                        class="btn btn-outline-warning" style="border: none; margin-top: 4px;"><span class="botonIzqi">Home</span></button></a>
+                    </div>
+
+                    <div class="iconI pt-5">
+                        <i class="iconosNavizq fa fa-user"></i> <a href="perfil.html" style="text-decoration:        none;"><button type="button" class="btn btn-outline-warning" style="border: none; margin-top: 4px;"><span class="botonIzqi">Perfil</span></button></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="text-center my-4">
+                    <button id="addPostBtn" class="btn btn-primary">
+                      <i class="fas fa-plus"></i> Añadir Publicación
+                    </button>
+                  </div>
+            
+                  
+            
+                  <!-- Modal -->
+<div class="modal fade" id="addPostModal" tabindex="1" aria-labelledby="addPostModalLabel" aria-hidden="true" data-bs-backdrop="false" data-bs-keyboard="true" style="padding-top: 150px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPostModalLabel">Añadir Nueva Publicación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="nueva-publicacion-form">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Título de la Publicación</label>
+                        <input type="text" class="form-control" id="title" placeholder="Título">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="description" rows="3" placeholder="Descripción"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imagen" class="form-label">Imagen</label>
+                        <input type="file" class="form-control" id="imagen" accept="image/*">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="agregar-publicacion-btn">Añadir Publicación</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                <div class="d-flex justify-content-center mt-5">
+                    <button type="button" class="btn btn-warning mt-2" style="height: 50px; font-family: north;">CERRAR SESIÓN</button>
+                </div>
+            </div>
+        </ul>
+    </aside>
+
+    <main class="mein">
+      
+      <div class="contenedorPubli container my-4 text-center">
+        <div id="tus-publicaciones" class="card-group row mx-auto "></div>
+      </div>
+    
+
+    </main>
+
+    <aside class="asideDer">
+        <div>
+            <article class="custom">
+                    <img class="iconoBanner" src="../assets/img/imagenes-Marcelo/icono.png" alt="">
+                    <h5 class="confianza text-center pb-2 pt-2">¿Tienes confianza?</h5>
+                    <a class="text-center" href="convocatoria.html"><button class="botonConvocatoria">Demuestralo</button></a>
+                <p class="aprender pt-4">Anótate a las propuestas que spotlight tiene para tí y capacitate para sacar a relucir todo tu potencial</p>
+            </article>
+        </div>
+    </aside>
+
+    <script src="../assets/script/scrip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <script src="../js/post.js"></script>
+</body>
+
+</html>
