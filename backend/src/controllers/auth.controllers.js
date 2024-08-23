@@ -11,14 +11,23 @@ export const register = async (req,res) => {
 
         const sql = `INSERT INTO users (name, lastname, username, email, password) VALUES (?,?,?,?,?)`;
 
-            const hashPassword = hashSync(password, 10)
+        const verificarUser = 'SELECT * FROM users WHERE username = ? LIMIT 1'
+        const [userExists] = await connection.query(verificarUser, [username]);
 
-            await connection.query(sql, 
-                [name, 
-                lastname, 
-                username,
-                email, 
-                hashPassword])
+        if (userExists.length > 0) {
+            return res.status(400).json({
+                msg: 'El nombre de usuario ya existe'
+            })
+        }
+
+        const hashPassword = hashSync(password, 10)
+
+        await connection.query(sql, 
+            [name, 
+            lastname, 
+            username,
+            email, 
+            hashPassword])
 
             res.status(201).json({msg: 'Registrado correctamente'})
 
